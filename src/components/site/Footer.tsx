@@ -1,15 +1,14 @@
 import { SiWhatsapp, SiInstagram } from "react-icons/si";
 import { CalendarHeart, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
-import mascot from "@/assets/mascot-wave.png.asset.json";
+import { IMG } from "@/lib/images";
 import { BOOKING_URL, INSTAGRAM_URL, PHONE_LABEL, WHATSAPP_URL } from "@/lib/site";
 import { Reveal, Star, Wave, Blob } from "./Decor";
 
 export function FinalCta() {
   return (
     <section className="relative overflow-hidden bg-pink text-primary-foreground">
-      <Star className="absolute left-[10%] top-14 w-10 animate-wiggle" />
-      <Blob className="absolute right-[6%] top-10 w-24 opacity-90" color="var(--orange)" />
+      <Star className="absolute left-4 top-6 w-7 animate-wiggle md:left-[10%] md:top-14 md:w-10" />
+      <Blob className="absolute right-4 top-4 w-14 opacity-90 md:right-[6%] md:top-10 md:w-24" color="var(--orange)" />
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-8 pt-20 md:grid-cols-[1.3fr_1fr]">
         <Reveal>
           <h2 className="text-4xl font-bold leading-tight md:text-6xl">Seu pequeno merece viver essa experiência!</h2>
@@ -20,7 +19,7 @@ export function FinalCta() {
         </Reveal>
         <div className="relative mx-auto w-48 md:w-64">
           <div className="absolute inset-x-0 bottom-2 mx-auto h-6 w-3/4 rounded-[50%] bg-ink/20" />
-          <img src={mascot.url} alt="Mascote da Tesourinha acenando" loading="lazy" className="relative animate-float" />
+          <img src={IMG.mascotWave} alt="Mascote da Tesourinha acenando" loading="lazy" className="relative animate-float" />
         </div>
       </div>
       <Wave fill="var(--brand)" variant="drips" />
@@ -36,9 +35,9 @@ export function Footer() {
   ];
   return (
     <footer className="bg-brand pb-28 pt-10 text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3 md:items-center">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_auto] md:items-center lg:grid-cols-[1fr_auto_auto] lg:gap-12">
         <div>
-          <div className="inline-block rounded-[2rem] bg-cream p-4"><img src={logo.url} alt="Tesourinha Kids" className="h-16 w-auto" loading="lazy" /></div>
+          <div className="inline-block rounded-[2rem] bg-cream p-4"><img src={IMG.logo} alt="Tesourinha Kids" className="h-16 w-auto" loading="lazy" /></div>
           <p className="mt-4 font-display text-2xl font-semibold">Tesourinha Kids Hair</p>
           <p className="mt-1 flex items-center gap-2 opacity-90"><MapPin size={16} aria-hidden /> Camboriú – SC</p>
         </div>
@@ -46,9 +45,9 @@ export function Footer() {
           <a className="flex items-center gap-2 hover:underline" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><SiWhatsapp aria-hidden /> {PHONE_LABEL}</a>
           <a className="flex items-center gap-2 hover:underline" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"><SiInstagram aria-hidden /> @tesourinhakidshair</a>
         </div>
-        <div className="flex flex-wrap gap-3 md:justify-end">
+        <div className="flex flex-wrap gap-3 md:col-span-2 lg:col-span-1 lg:flex-nowrap lg:justify-end">
           {social.map(({ href, label, Icon, cls }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={`btn-pop px-5 py-3 text-sm ${cls}`}>
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={`btn-pop h-12 whitespace-nowrap px-5 py-0 text-sm ${cls}`}>
               <Icon size={18} aria-hidden /> {label}
             </a>
           ))}

@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Heart, Sparkles, Smile } from "lucide-react";
-import mascotHands from "@/assets/mascot-hands.png.asset.json";
-import mascotWave from "@/assets/mascot-wave.png.asset.json";
-import fachada from "@/assets/fachada.jpg.asset.json";
-import interior from "@/assets/interior.jpg.asset.json";
+import { IMG } from "@/lib/images";
 import { BOOKING_URL } from "@/lib/site";
 import { Header } from "@/components/site/Header";
 import { Reviews } from "@/components/site/Reviews";
@@ -37,10 +34,10 @@ function Hero() {
       <Squiggle className="absolute right-[6%] top-[40%] hidden w-20 md:block" color="var(--mint)" />
       <Blob className="absolute left-[8%] top-[55%] hidden w-16 md:block" color="var(--lime)" />
       <Star className="absolute left-[30%] top-10 w-5" color="var(--sky)" />
-      <div className="relative mx-auto grid max-w-6xl items-end gap-6 px-6 pt-16 md:grid-cols-[1.2fr_1fr] md:pt-20">
-        <div className="relative z-10 pb-6 text-center md:pb-24 md:text-left">
+      <div className="relative mx-auto grid max-w-6xl items-end gap-6 px-6 pt-12 md:grid-cols-[1.2fr_1fr] md:pt-20">
+        <div className="relative z-10 pb-2 text-center md:pb-24 md:text-left">
           <p className="mb-4 inline-block rounded-full bg-lime px-4 py-1 text-sm font-extrabold uppercase tracking-wider text-brand">Salão infantil · Camboriú</p>
-          <h1 className="text-5xl font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
+          <h1 className="text-[2.6rem] font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
             <span className="text-brand">Pequenos cortes,</span><br />
             <span className="text-pink">grandes momentos!</span>
           </h1>
@@ -52,11 +49,11 @@ function Hero() {
             <a href="#espaco" className="btn-pop bg-card text-ink">CONHEÇA NOSSO ESPAÇO</a>
           </div>
         </div>
-        <div className="relative mx-auto w-56 sm:w-64 md:w-80">
-          <Scissors className="absolute -left-10 top-10 w-12 animate-wiggle" />
-          <Comb className="absolute -right-8 top-24 w-14 rotate-12" />
+        <div className="relative mx-auto mt-2 w-36 sm:w-48 md:mt-0 md:w-80">
+          <Scissors className="absolute -left-8 top-8 w-9 animate-wiggle md:-left-10 md:top-10 md:w-12" />
+          <Comb className="absolute -right-8 top-16 w-10 rotate-12 md:top-24 md:w-14" />
           <Star className="absolute -right-4 top-0 w-7" color="var(--orange)" />
-          <img src={mascotHands.url} alt="Mascote da Tesourinha, um menino com cabelo azul em formato de tesoura" className="relative z-10 animate-float" fetchPriority="high" />
+          <img src={IMG.mascotHands} alt="Mascote da Tesourinha, um menino com cabelo azul em formato de tesoura" className="relative z-10 animate-float" fetchPriority="high" />
           <div className="absolute -bottom-2 left-1/2 h-6 w-2/3 -translate-x-1/2 rounded-[50%] bg-mint-deep/25" />
         </div>
       </div>
@@ -68,27 +65,27 @@ function Hero() {
 function About() {
   return (
     <section className="relative overflow-hidden bg-mint">
-      <Eye className="absolute left-[5%] top-10 w-14 md:w-20" />
-      <Eye className="absolute right-[5%] top-24 w-12 -scale-x-100 md:w-16" />
-      <div className="mx-auto max-w-6xl px-6 pb-10 pt-8">
+      <Eye className="pointer-events-none absolute left-3 top-2 z-0 w-10 md:left-[5%] md:top-10 md:w-20" />
+      <Eye className="pointer-events-none absolute right-3 top-2 z-0 w-9 -scale-x-100 md:right-[5%] md:top-24 md:w-16" />
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-10 pt-14 md:pt-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold text-ink md:text-6xl">Muito prazer, somos a Tesourinha!</h2>
+          <h2 className="px-6 text-4xl font-bold text-ink md:px-0 md:text-6xl">Muito prazer, somos a Tesourinha!</h2>
         </Reveal>
         <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
           <Reveal className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-4 rounded-[50%] border-[3px] border-dashed border-cream/90" />
+            <div className="absolute -inset-2 rounded-[50%] md:-inset-4 border-[3px] border-dashed border-cream/90" />
             <div className="aspect-[1/1.08] overflow-hidden rounded-[50%] border-[6px] border-cream shadow-soft">
-              <img src={interior.url} alt="Cadeiras infantis em formato de disco voador e quadriciclo no salão Tesourinha" loading="lazy" className="h-full w-full object-cover" />
+              <img src={IMG.interior} alt="Cadeiras infantis em formato de disco voador e quadriciclo no salão Tesourinha" loading="lazy" className="h-full w-full object-cover" />
             </div>
-            <Star className="absolute -right-2 top-4 w-10" color="var(--sun)" />
-            <Blob className="absolute -bottom-2 -left-4 w-20" color="var(--pink)" />
+            <Star className="absolute right-0 top-2 w-8 md:-right-2 md:top-4 md:w-10" color="var(--sun)" />
+            <Blob className="absolute -bottom-2 left-0 w-16 md:-left-4 md:w-20" color="var(--pink)" />
           </Reveal>
           <Reveal delay={150} className="relative">
             <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Tudo começa com um sorriso…</p>
             <p className="mt-4 text-xl leading-relaxed text-ink">
               Mais do que cortar cabelos, queremos transformar cada visita em um momento especial. Aqui, cada criança tem seu próprio tempo, seu jeito de ser e merece receber todo o carinho e cuidado.
             </p>
-            <img src={mascotWave.url} alt="" aria-hidden loading="lazy" className="ml-auto mt-6 w-28 animate-float md:w-36" style={{ animationDelay: "-2s" }} />
+            <div className="mt-6 flex items-center gap-4"><Scissors className="w-12" color="var(--ink)" /><Squiggle className="w-20" color="var(--cream)" /><Star className="w-8" color="var(--pink)" /></div>
           </Reveal>
         </div>
       </div>
@@ -113,12 +110,12 @@ function Experience() {
           </p>
           <Squiggle className="mt-6 w-24" color="var(--pink)" />
         </Reveal>
-        <div className="relative flex items-end justify-center">
+        <div className="relative flex min-h-56 items-center justify-center md:min-h-64 md:items-end">
           <div className="absolute bottom-6 h-60 w-60 rounded-full bg-pink-soft md:h-72 md:w-72" />
-          <Scissors className="absolute left-6 top-4 w-14 animate-wiggle" color="var(--mint-deep)" />
+          <Scissors className="absolute left-4 top-2 w-12 animate-wiggle md:left-6 md:top-4 md:w-14" color="var(--mint-deep)" />
           <Star className="absolute right-10 top-0 w-10" color="var(--orange)" />
           <Blob className="absolute right-4 top-24 w-14" color="var(--mint)" />
-          <img src={mascotWave.url} alt="Mascote da Tesourinha acenando" loading="lazy" className="relative w-48 animate-float md:w-60" />
+          <div className="relative flex h-56 w-56 items-center justify-center md:h-72 md:w-72"><Comb className="absolute left-6 top-16 w-24 -rotate-12 animate-float" /><Bow className="absolute bottom-14 right-6 w-24 rotate-6" /><Star className="absolute bottom-20 left-14 w-10" color="var(--brand)" /></div>
         </div>
       </div>
       <ul className="mx-auto mt-16 grid max-w-6xl gap-10 px-6 pb-16 md:grid-cols-3">
@@ -173,11 +170,11 @@ function Atypical() {
   return (
     <section id="atipico" className="relative overflow-hidden bg-pink-soft pt-12">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 md:grid-cols-[1fr_1.3fr]">
-        <Reveal className="relative mx-auto flex w-64 justify-center md:w-80">
+        <Reveal className="relative mx-auto flex w-60 justify-center md:w-80">
           <div className="absolute inset-0 m-auto h-60 w-60 rounded-[58%_42%_50%_50%/50%_55%_45%_50%] bg-cream md:h-72 md:w-72" />
           <Heart className="absolute left-2 top-4 text-pink" size={36} fill="currentColor" aria-hidden />
           <Star className="absolute bottom-10 right-0 w-9" color="var(--brand)" />
-          <img src={mascotHands.url} alt="" aria-hidden loading="lazy" className="relative w-44 animate-float md:w-52" style={{ animationDelay: "-1s" }} />
+          <div className="relative flex h-56 items-center justify-center md:h-72"><Heart className="animate-float text-pink" size={120} fill="currentColor" strokeWidth={1.5} aria-hidden /><Heart className="absolute right-4 top-10 text-brand" size={34} fill="currentColor" aria-hidden /><Heart className="absolute bottom-10 left-4 text-sun" size={28} fill="currentColor" aria-hidden /></div>
         </Reveal>
         <Reveal delay={120}>
           <p className="inline-block rounded-full bg-cream px-4 py-1 text-sm font-extrabold uppercase tracking-wider text-pink">Atendimento atípico</p>
@@ -199,23 +196,23 @@ function Atypical() {
 function Space() {
   return (
     <section id="espaco" className="relative overflow-hidden bg-sun pt-12">
-      <Squiggle className="absolute left-[6%] top-16 w-20" color="var(--brand)" />
+      <Squiggle className="absolute left-4 top-4 w-12 md:left-[6%] md:top-16 md:w-20" color="var(--brand)" />
       <Reveal className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="text-4xl font-bold text-ink md:text-6xl">Entre, fique à vontade e conheça nosso espaço!</h2>
       </Reveal>
       <div className="relative mx-auto mt-14 max-w-5xl px-6 pb-28">
         <Reveal className="relative md:w-[68%]">
           <div className="overflow-hidden rounded-[3rem_3rem_6rem_3rem] border-[6px] border-cream bg-cream shadow-soft md:-rotate-2">
-            <img src={fachada.url} alt="Fachada colorida do salão Tesourinha Kids Hair em Camboriú" loading="lazy" className="aspect-[4/3] w-full object-cover object-[50%_40%]" />
+            <img src={IMG.fachada} alt="Fachada colorida do salão Tesourinha Kids Hair em Camboriú" loading="lazy" className="aspect-[4/3] w-full object-cover object-[50%_40%]" />
           </div>
           <span className="absolute -top-5 left-8 rounded-full border-2 border-ink bg-pink px-5 py-2 font-display font-semibold text-primary-foreground">Nossa fachada</span>
         </Reveal>
-        <Reveal delay={150} className="relative -mt-16 ml-auto w-[78%] md:absolute md:right-6 md:top-28 md:mt-0 md:w-[46%]">
+        <Reveal delay={150} className="relative -mt-12 ml-auto mr-2 w-[70%] md:absolute md:right-6 md:top-28 md:mt-0 md:w-[46%]">
           <div className="overflow-hidden rounded-full border-[6px] border-cream shadow-soft md:rotate-3">
-            <img src={interior.url} alt="Cadeirinhas divertidas onde as crianças sentam para cortar" loading="lazy" className="aspect-square w-full object-cover" />
+            <img src={IMG.interior} alt="Cadeirinhas divertidas onde as crianças sentam para cortar" loading="lazy" className="aspect-square w-full object-cover" />
           </div>
-          <span className="absolute -bottom-3 right-6 rounded-full border-2 border-ink bg-mint px-5 py-2 font-display font-semibold">Cadeirinhas divertidas</span>
-          <Star className="absolute -left-4 top-2 w-12 animate-wiggle" color="var(--pink)" />
+          <span className="absolute -bottom-3 right-2 whitespace-nowrap text-sm md:right-6 md:text-base rounded-full border-2 border-ink bg-mint px-5 py-2 font-display font-semibold">Cadeirinhas divertidas</span>
+          <Star className="absolute -left-3 top-2 w-9 animate-wiggle md:-left-4 md:w-12" color="var(--pink)" />
         </Reveal>
       </div>
       <Wave fill="var(--cream)" variant="hills" />

@@ -102,7 +102,7 @@ const WAVES = {
 export function Wave({ fill, variant = "soft", flip, className = "" }: { fill: string; variant?: keyof typeof WAVES; flip?: boolean; className?: string }) {
   return (
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden
-      className={`block h-14 w-full sm:h-20 md:h-28 ${flip ? "-scale-x-100" : ""} ${className}`}>
+      className={`relative -mb-px block h-14 w-full sm:h-20 md:h-28 ${flip ? "-scale-x-100" : ""} ${className}`}>
       <path d={WAVES[variant]} fill={fill} />
     </svg>
   );

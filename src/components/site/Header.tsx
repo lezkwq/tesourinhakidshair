@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import { IMG } from "@/lib/images";
 import { BOOKING_URL } from "@/lib/site";
 
 const NAV = [
@@ -17,7 +17,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b-2 border-ink/10 bg-cream/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:h-20">
         <a href="#inicio" aria-label="Tesourinha Kids Hair, início">
-          <img src={logo.url} alt="Tesourinha Kids" className="h-10 w-auto md:h-12" />
+          <img src={IMG.logo} alt="Tesourinha Kids" className="h-10 w-auto md:h-12" />
         </a>
         <nav aria-label="Principal" className="hidden lg:block">
           <ul className="flex items-center gap-7 text-sm font-bold">
