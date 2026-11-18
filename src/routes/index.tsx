@@ -61,7 +61,7 @@ function SocialProof() {
       <Reveal className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Nota máxima no Google</p>
-          <h2 className="mt-1 text-3xl font-bold leading-tight text-ink md:text-4xl">O primeiro salão infantil de Camboriú.</h2>
+          <h2 className="mt-1 text-3xl font-bold leading-tight text-ink md:text-4xl">Mais de 130 famílias já confiam na gente.</h2>
         </div>
         <div className="flex shrink-0 flex-col items-center rounded-2xl border-2 border-ink bg-card px-6 py-3 md:items-start">
           <span className="flex items-center gap-1 text-sun" aria-label="5 de 5 estrelas">

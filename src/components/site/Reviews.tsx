@@ -3,6 +3,7 @@ import { REVIEWS, type Review } from "@/lib/site";
 import { Reveal } from "./Decor";
 
 const TINTS = ["bg-pink-soft", "bg-lime", "bg-sky", "bg-sun", "bg-mint"];
+const CAROUSEL_REVIEWS = REVIEWS.filter(({ name }) => name !== "Adriana Delgado");
 
 function ReviewCard({ r, i }: { r: Review; i: number }) {
   return (
@@ -22,22 +23,17 @@ function ReviewCard({ r, i }: { r: Review; i: number }) {
 }
 
 export function Reviews() {
-  const loop = [...REVIEWS, ...REVIEWS];
+  const loop = [...CAROUSEL_REVIEWS, ...CAROUSEL_REVIEWS];
   return (
     <section id="avaliacoes" className="relative overflow-hidden bg-cream py-20 md:py-28">
       <Reveal className="mx-auto max-w-3xl px-6 text-center">
-        <div className="mx-auto mb-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border-2 border-ink bg-card px-5 py-2" style={{ boxShadow: "var(--shadow-pop)" }}>
-          <span className="font-display text-2xl font-bold">5,0</span>
-          <span className="flex text-sun">{Array.from({ length: 5 }, (_, k) => <StarIcon key={k} size={18} fill="currentColor" strokeWidth={0} />)}</span>
-          <span className="text-sm font-bold">133 avaliações no Google</span>
-        </div>
         <h2 className="text-4xl font-bold text-brand md:text-6xl">O carinho de quem já viveu essa experiência!</h2>
         <p className="mt-4 text-lg text-muted-foreground">Famílias que confiam, pequenos que adoram voltar e momentos que ficam na memória.</p>
       </Reveal>
       <div className="relative mt-14 [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
         <div className="marquee-track flex w-max py-4">
           {loop.map((r, i) => (
-            <div key={i} className="pr-6" aria-hidden={i >= REVIEWS.length || undefined}><ReviewCard r={r} i={i} /></div>
+            <div key={i} className="pr-6" aria-hidden={i >= CAROUSEL_REVIEWS.length || undefined}><ReviewCard r={r} i={i} /></div>
           ))}
         </div>
       </div>
