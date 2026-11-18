@@ -45,7 +45,7 @@ function Hero() {
             <a href="#espaco" className="btn-pop bg-card text-ink">CONHEÇA NOSSO ESPAÇO</a>
           </div>
         </div>
-        <div className="relative mx-auto mt-2 w-36 sm:w-48 md:mt-0 md:w-80">
+        <div className="relative mx-auto mt-2 hidden w-36 sm:w-48 md:mt-0 md:block md:w-80">
           <img src={IMG.mascotHands} alt="Mascote da Tesourinha, um menino com cabelo azul em formato de tesoura" className="relative z-10 animate-float" fetchPriority="high" />
           <div className="absolute -bottom-2 left-1/2 h-6 w-2/3 -translate-x-1/2 rounded-[50%] bg-mint-deep/25" />
         </div>
@@ -97,7 +97,7 @@ function Experience() {
             No Tesourinha, cada detalhe é pensado para que os pequenos se sintam à vontade. Criamos um ambiente acolhedor, divertido e preparado para tornar o momento do corte uma experiência positiva.
           </p>
         </Reveal>
-        <div className="relative flex min-h-56 items-center justify-center md:min-h-64 md:items-end">
+        <div className="relative hidden min-h-56 items-center justify-center md:flex md:min-h-64 md:items-end">
           <div className="relative flex h-56 w-56 items-center justify-center rounded-full bg-pink-soft md:h-72 md:w-72">
             <Heart className="animate-float text-pink" size={120} fill="currentColor" strokeWidth={1.5} aria-hidden />
           </div>
@@ -153,7 +153,7 @@ function Atypical() {
   return (
     <section id="atipico" className="relative overflow-hidden bg-pink-soft pt-12">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 md:grid-cols-[1fr_1.3fr]">
-        <Reveal className="relative mx-auto flex w-60 justify-center md:w-80">
+        <Reveal className="relative mx-auto hidden w-60 justify-center md:flex md:w-80">
           <div className="absolute inset-0 m-auto h-60 w-60 rounded-[58%_42%_50%_50%/50%_55%_45%_50%] bg-cream md:h-72 md:w-72" />
           <Heart className="absolute left-2 top-4 text-pink" size={36} fill="currentColor" aria-hidden />
           <div className="relative flex h-56 items-center justify-center md:h-72"><Heart className="animate-float text-pink" size={120} fill="currentColor" strokeWidth={1.5} aria-hidden /><Heart className="absolute right-4 top-10 text-brand" size={34} fill="currentColor" aria-hidden /><Heart className="absolute bottom-10 left-4 text-sun" size={28} fill="currentColor" aria-hidden /></div>
@@ -184,13 +184,13 @@ function Space() {
       <div className="relative mx-auto mt-14 max-w-5xl px-6 pb-28">
         <Reveal className="relative md:w-[68%]">
           <div className="overflow-hidden rounded-[3rem_3rem_6rem_3rem] border-[6px] border-cream bg-cream shadow-soft md:-rotate-2">
-            <img src={IMG.fachada} alt="Fachada colorida do salão Tesourinha Kids Hair em Camboriú" loading="lazy" className="aspect-[4/3] w-full object-cover object-[50%_40%]" />
+            <img src={IMG.fachada} alt="Fachada colorida do salão Tesourinha Kids Hair em Camboriú" loading="lazy" className="aspect-[4/5] w-full object-cover object-[50%_60%] md:aspect-[4/3] md:object-[50%_40%]" />
           </div>
           <span className="absolute -top-5 left-8 rounded-full border-2 border-ink bg-pink px-5 py-2 font-display font-semibold text-primary-foreground">Nossa fachada</span>
         </Reveal>
-        <Reveal delay={150} className="relative -mt-12 ml-auto mr-2 w-[70%] md:absolute md:right-6 md:top-28 md:mt-0 md:w-[46%]">
-          <div className="overflow-hidden rounded-full border-[6px] border-cream shadow-soft md:rotate-3">
-            <img src={IMG.interior} alt="Cadeirinhas divertidas onde as crianças sentam para cortar" loading="lazy" className="aspect-square w-full object-cover" />
+        <Reveal delay={150} className="relative mt-8 w-full md:absolute md:right-6 md:top-28 md:mt-0 md:ml-auto md:mr-2 md:w-[46%]">
+          <div className="overflow-hidden rounded-[2.5rem] border-[6px] border-cream shadow-soft md:rotate-3 md:rounded-full">
+            <img src={IMG.interior} alt="Cadeirinhas divertidas onde as crianças sentam para cortar" loading="lazy" className="aspect-[3/2] w-full object-cover md:aspect-square" />
           </div>
           <span className="absolute -bottom-3 right-2 whitespace-nowrap text-sm md:right-6 md:text-base rounded-full border-2 border-ink bg-mint px-5 py-2 font-display font-semibold">Cadeirinhas divertidas</span>
         </Reveal>
