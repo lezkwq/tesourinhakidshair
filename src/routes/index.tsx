@@ -34,8 +34,8 @@ function Hero() {
         <div className="relative z-10 pb-2 text-center md:pb-24 md:text-left">
           <p className="mb-4 inline-block rounded-full bg-lime px-4 py-1 text-sm font-extrabold uppercase tracking-wider text-brand">Salão infantil · Camboriú</p>
           <h1 className="text-[2.6rem] font-bold leading-[0.95] sm:text-6xl lg:text-7xl">
-            <span className="text-brand">Pequenos cortes,</span><br />
-            <span className="text-pink">grandes momentos!</span>
+            <span className="text-brand">O primeiro salão infantil de Camboriú, </span>
+            <span className="text-pink">preparado até pra criança atípica</span>
           </h1>
           <p className="mx-auto mt-6 max-w-md text-lg text-muted-foreground md:mx-0">
             Um espaço feito para os pequenos viverem uma experiência cheia de diversão, carinho e cuidado.
