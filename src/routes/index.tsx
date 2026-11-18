@@ -38,7 +38,7 @@ function Hero() {
             <span className="text-pink">preparado até pra criança atípica</span>
           </h1>
           <p className="mx-auto mt-6 max-w-md text-lg text-muted-foreground md:mx-0">
-            Um espaço feito para os pequenos viverem uma experiência cheia de diversão, carinho e cuidado.
+            Corte, hidratação e penteados pra toda criança de Camboriú, com paciência de sobra pra quem tem medo da tesoura.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-pop bg-pink text-primary-foreground">AGENDAR HORÁRIO</a>
