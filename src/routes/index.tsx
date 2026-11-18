@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart, Smile } from "lucide-react";
+import { Heart, Quote, Star as StarIcon } from "lucide-react";
 import { IMG } from "@/lib/images";
-import { BOOKING_URL } from "@/lib/site";
+import { BOOKING_URL, REVIEWS } from "@/lib/site";
 import { Header } from "@/components/site/Header";
 import { Reviews } from "@/components/site/Reviews";
 import { FinalCta, Footer, WhatsAppFloat } from "@/components/site/Footer";
@@ -55,70 +55,62 @@ function Hero() {
   );
 }
 
-function About() {
+function SocialProof() {
   return (
-    <section className="relative overflow-hidden bg-mint">
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-10 pt-14 md:pt-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="px-6 text-4xl font-bold text-ink md:px-0 md:text-6xl">Muito prazer, somos a Tesourinha!</h2>
-        </Reveal>
-        <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
-          <Reveal className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-2 rounded-[50%] md:-inset-4 border-[3px] border-dashed border-cream/90" />
-            <div className="aspect-[1/1.08] overflow-hidden rounded-[50%] border-[6px] border-cream shadow-soft">
-              <img src={IMG.interior} alt="Cadeiras infantis em formato de disco voador e quadriciclo no salão Tesourinha" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-          </Reveal>
-          <Reveal delay={150} className="relative">
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Tudo começa com um sorriso…</p>
-            <p className="mt-4 text-xl leading-relaxed text-ink">
-              Mais do que cortar cabelos, queremos transformar cada visita em um momento especial. Aqui, cada criança tem seu próprio tempo, seu jeito de ser e merece receber todo o carinho e cuidado.
-            </p>
-          </Reveal>
+    <section className="bg-cream px-6 py-10">
+      <Reveal className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
+        <div>
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Nota máxima no Google</p>
+          <h2 className="mt-1 text-3xl font-bold leading-tight text-ink md:text-4xl">O primeiro salão infantil de Camboriú.</h2>
         </div>
-      </div>
-      <Wave fill="var(--cream)" variant="soft" />
+        <div className="flex shrink-0 flex-col items-center rounded-2xl border-2 border-ink bg-card px-6 py-3 md:items-start">
+          <span className="flex items-center gap-1 text-sun" aria-label="5 de 5 estrelas">
+            {Array.from({ length: 5 }, (_, i) => <StarIcon key={i} size={20} fill="currentColor" strokeWidth={0} />)}
+            <strong className="ml-2 text-2xl text-ink">5,0</strong>
+          </span>
+          <span className="text-sm font-bold text-muted-foreground">133 avaliações no Google</span>
+        </div>
+      </Reveal>
     </section>
   );
 }
 
-function Experience() {
-  const items = [
-    { t: "Diversão", d: "Um espaço pensado para transformar o corte em um momento especial.", Icon: Heart, c: "bg-sun", pos: "md:translate-y-0" },
-    { t: "Carinho", d: "Atendimento atencioso, respeitando o ritmo e a individualidade de cada criança.", Icon: Heart, c: "bg-pink-soft", pos: "md:translate-y-12" },
-    { t: "Acolhimento", d: "Um ambiente onde cada pequeno pode se sentir confortável e respeitado.", Icon: Smile, c: "bg-lime", pos: "md:-translate-y-4" },
-  ];
+function FeaturedReview() {
+  const review = REVIEWS.find(({ text }) => text.includes("Theo") && text.includes("TEA"));
+  if (!review) return null;
+
   return (
-    <section className="relative overflow-hidden bg-cream pb-6 pt-16">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1fr_1fr]">
+    <section className="bg-pink-soft px-6 py-12">
+      <Reveal className="mx-auto max-w-4xl rounded-[2rem] border-2 border-ink/10 bg-card p-7 shadow-soft md:p-10">
+        <div className="flex items-center gap-3 text-brand">
+          <Quote size={28} fill="currentColor" aria-hidden />
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em]">Um relato que importa</p>
+        </div>
+        <blockquote className="mt-5 text-xl leading-relaxed text-ink md:text-2xl">“{review.text}”</blockquote>
+        <p className="mt-5 font-display text-lg font-semibold text-brand">— {review.name}</p>
+      </Reveal>
+    </section>
+  );
+}
+
+function AboutExperience() {
+  return (
+    <section className="relative overflow-hidden bg-mint">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 py-14 md:grid-cols-2 md:gap-12">
         <Reveal>
-          <h2 className="text-4xl font-bold leading-tight text-brand md:text-6xl">Muito mais que um corte de cabelo!</h2>
-          <p className="mt-5 max-w-md text-lg text-muted-foreground">
-            No Tesourinha, cada detalhe é pensado para que os pequenos se sintam à vontade. Criamos um ambiente acolhedor, divertido e preparado para tornar o momento do corte uma experiência positiva.
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Muito prazer, somos a Tesourinha!</p>
+          <h2 className="mt-3 text-4xl font-bold leading-tight text-ink md:text-5xl">Um corte mais leve para cada criança.</h2>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink">
+            Um salão pensado para os pequenos: cadeiras divertidas, espaço para brincar e atendimento que acompanha o ritmo de cada criança.
           </p>
         </Reveal>
-        <div className="relative hidden min-h-56 items-center justify-center md:flex md:min-h-64 md:items-end">
-          <div className="relative flex h-56 w-56 items-center justify-center rounded-full bg-pink-soft md:h-72 md:w-72">
-            <Heart className="animate-float text-pink" size={120} fill="currentColor" strokeWidth={1.5} aria-hidden />
+        <Reveal delay={120} className="mx-auto w-full max-w-xl">
+          <div className="overflow-hidden rounded-[2.5rem] border-[6px] border-cream shadow-soft">
+            <img src={IMG.interior} alt="Cadeiras infantis divertidas do salão Tesourinha Kids Hair" loading="lazy" className="aspect-[3/2] w-full object-cover" />
           </div>
-        </div>
+        </Reveal>
       </div>
-      <ul className="mx-auto mt-16 grid max-w-6xl gap-10 px-6 pb-16 md:grid-cols-3">
-        {items.map(({ t, d, Icon, c, pos }, i) => (
-          <li key={t} className={pos}>
-            <Reveal delay={i * 120} className="flex gap-4">
-              <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-[45%_55%_60%_40%] border-2 border-ink ${c}`}>
-                <Icon className="text-ink" aria-hidden />
-              </span>
-              <div>
-                <h3 className="text-2xl font-bold">{t}</h3>
-                <p className="mt-1 text-muted-foreground">{d}</p>
-              </div>
-            </Reveal>
-          </li>
-        ))}
-      </ul>
-      <Wave fill="var(--sky)" variant="bumpy" />
+      <Wave fill="var(--cream)" variant="soft" />
     </section>
   );
 }
@@ -207,9 +199,10 @@ function Index() {
       <Header />
       <main id="conteudo">
         <Hero />
-        <About />
-        <Experience />
+        <SocialProof />
         <Services />
+        <FeaturedReview />
+        <AboutExperience />
         <Atypical />
         <Space />
         <Reviews />
