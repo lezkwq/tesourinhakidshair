@@ -1,6 +1,6 @@
 import { Star as StarIcon, User } from "lucide-react";
 import { REVIEWS, type Review } from "@/lib/site";
-import { Reveal, Star, Squiggle } from "./Decor";
+import { Reveal } from "./Decor";
 
 const TINTS = ["bg-pink-soft", "bg-lime", "bg-sky", "bg-sun", "bg-mint"];
 
@@ -25,8 +25,6 @@ export function Reviews() {
   const loop = [...REVIEWS, ...REVIEWS];
   return (
     <section id="avaliacoes" className="relative overflow-hidden bg-cream py-20 md:py-28">
-      <Star className="absolute left-4 top-6 w-6 animate-wiggle md:left-[8%] md:top-16 md:w-8" color="var(--pink)" />
-      <Squiggle className="absolute right-4 top-6 w-12 md:right-[10%] md:top-24 md:w-20" color="var(--mint)" />
       <Reveal className="mx-auto max-w-3xl px-6 text-center">
         <div className="mx-auto mb-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border-2 border-ink bg-card px-5 py-2" style={{ boxShadow: "var(--shadow-pop)" }}>
           <span className="font-display text-2xl font-bold">5,0</span>
