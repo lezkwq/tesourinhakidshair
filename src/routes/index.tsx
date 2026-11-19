@@ -57,7 +57,7 @@ function Hero() {
 
 function SocialProof() {
   return (
-    <section className="bg-cream px-6 py-10">
+    <section className="bg-mint px-6 py-10">
       <Reveal className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Nota máxima no Google</p>
