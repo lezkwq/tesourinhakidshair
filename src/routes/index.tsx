@@ -110,7 +110,7 @@ function AboutExperience() {
           </div>
         </Reveal>
       </div>
-      <Wave fill="var(--cream)" variant="soft" />
+      <Wave fill="var(--pink-soft)" variant="soft" />
     </section>
   );
 }
