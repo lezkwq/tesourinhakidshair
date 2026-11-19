@@ -63,13 +63,19 @@ function SocialProof() {
           <p className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand">Nota máxima no Google</p>
           <h2 className="mt-1 text-3xl font-bold leading-tight text-ink md:text-4xl">Mais de 130 famílias já confiam na gente.</h2>
         </div>
-        <div className="flex shrink-0 flex-col items-center rounded-2xl border-2 border-ink bg-card px-6 py-3 md:items-start">
+        <a
+          href="https://www.google.com/maps/place/Tesourinha+Kids+Hair/@-27.0296064,-48.6588172,17z/data=!3m1!4b1!4m6!3m5!1s0x94d8b7bf76afe09b:0x82845f66c992490c!8m2!3d-27.0296064!4d-48.6562423!16s%2Fg%2F11sy7pgffg?entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir a Tesourinha Kids Hair no Google Maps"
+          className="google-rating-pulse flex shrink-0 cursor-pointer flex-col items-center rounded-2xl border-2 border-ink bg-card px-6 py-3 transition-[border-color,box-shadow] duration-200 hover:border-brand hover:shadow-soft md:items-start"
+        >
           <span className="flex items-center gap-1 text-sun" aria-label="5 de 5 estrelas">
             {Array.from({ length: 5 }, (_, i) => <StarIcon key={i} size={20} fill="currentColor" strokeWidth={0} />)}
             <strong className="ml-2 text-2xl text-ink">5,0</strong>
           </span>
           <span className="text-sm font-bold text-muted-foreground">133 avaliações no Google</span>
-        </div>
+        </a>
       </Reveal>
     </section>
   );
